@@ -22,10 +22,6 @@ function launchModal() {
 }
 
 //Ticket #1 : Fermeture de la modale
-// const closeButton = document.querySelector(".close"); 
-// closeButton.addEventListener("click", function(){
-//   modalbg.style.display = "none";
-// })
 
 const closeButton = document.querySelector(".close"); 
 
@@ -173,23 +169,29 @@ function checkboxCheck(){
 const messageRemerciement = document.getElementById('messageRemerciement');
 const btnMerci = document.getElementById('btnMerci');
 
-function Message() {
+function message() {
   //Masquer le formulaire d'origine
   form.className = 'notActive';
+  
   //Afficher le message et le bouton de fermeture
   messageRemerciement.className = 'active';
+
+  //Masque le bouton pour fermer la fenêtre car si utilisateur clique dessus, pas de submit()
+  closeButton.className = 'notActive';
+
 };
 
 btnMerci.addEventListener('click', function event() {
-  //Réactiver le formulaire d'origine
+  //Réactiver le formulaire d'origine --> pas besoin puisque lors du lancement de la modale, display : block
   // form.className = 'Active';
   //Masquer le message
   messageRemerciement.className = 'notActive';
-  // forcer la fermuture de la modale
+  // forcer la fermeture de la modale
   closeModal();
   form.submit();
-  // form.reset();
 });
+
+
 
 //ETAPE 4 : Définition de la fonction de validation
 
@@ -205,12 +207,13 @@ function validate(event){
     checkboxCheck()
 
   if(firstNameCheck() && lastNameCheck() && emailCheck() && birthdateCheck() && quantityCheck() && cityCheck() && checkboxCheck()){
-    Message();
+    message();
     return true
   }else{
     return false
   }
 }
+
 
 
   // const firstNameCheck = firstNameCheck() 

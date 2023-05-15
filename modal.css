@@ -95,7 +95,6 @@ img {
 
 /* Avant : menu burger pour les écrans de 768 px et moins, mais modifs */
 
-
 @media screen and (max-width: 822px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -233,7 +232,7 @@ input {
 }
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 0.4em;
+  font-size: 0.5em;
   color: #e54858;
   display: block;
   margin-top: 7px;
@@ -599,7 +598,7 @@ footer {
 /*message confirmation*/
 .message {
   display: flex;
-  height: 650px;
+  height: 350px;
   text-align: center;
   align-items: center;
 }
